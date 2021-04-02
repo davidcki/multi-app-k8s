@@ -1,0 +1,7 @@
+# Install a Travis container to encrypt GCP's service account JSON file.
+docker run -it -v $(pwd):/app ruby sh
+gem install travis
+
+# Generate a personal token with scopes: https://docs.travis-ci.com/user/github-oauth-scopes/#repositories-on-httpstravis-cicom-private-and-public
+travis login --github-token YOUR_PERSONAL_TOKEN --com
+travis encrypt-file service-account.json -r USERNAME/REPO --com
