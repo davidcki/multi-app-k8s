@@ -1,0 +1,7 @@
+# Create secret for Postgres (replace <password>)
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=<password>
+
+kubectl apply -f .
+
+# Useful commands
+kubectl get services -n ingress-nginx
