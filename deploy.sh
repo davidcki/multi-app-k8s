@@ -1,6 +1,6 @@
 docker build -t davidcki/multi-client:latest -t davidcki/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t davidcki/multi-server:latest -f davidcki/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t davidcki/multi-worker:latest -f davidcki/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t davidcki/multi-server:latest -t davidcki/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t davidcki/multi-worker:latest -t davidcki/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push davidcki/multi-client:latest
 docker push davidcki/multi-server:latest
