@@ -9,7 +9,7 @@ build:
     push: false
   artifacts:
     - image: davidcki/multi-client
-      context: client
+      context: ./client
       docker:
         dockerfile: Dockerfile.dev
       sync:
@@ -21,7 +21,7 @@ build:
           - src: "src/**/*.html"
             dest: .
     - image: davidcki/multi-worker
-      context: worker
+      context: ./worker
       docker:
         dockerfile: Dockerfile.dev
       sync:
@@ -29,7 +29,7 @@ build:
           - src: "*.js"
             dest: .
     - image: davidcki/multi-server
-      context: server
+      context: ./server
       docker:
         dockerfile: Dockerfile.dev
       sync:
